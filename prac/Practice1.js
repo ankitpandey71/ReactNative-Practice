@@ -9,7 +9,7 @@ const Practice1 = () => {
       <TextInput
         onChangeText={setGivename}
         value={givename}
-        style={{border: 'black', backgroundColor: 'blue'}}
+        style={{borderWidth: 1, backgroundColor: 'blue'}}
       />
       <Text>{givename}</Text>
     </>
