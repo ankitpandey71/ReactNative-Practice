@@ -7,6 +7,7 @@ import {
   Button,
   Alert,
   Image,
+  ScrollView,
 } from 'react-native';
 import Counter from './Counter';
 import Practice1 from './prac/Practice1';
@@ -19,39 +20,41 @@ const App = () => {
 
   return (
     <>
-      <Text style={styles.textColor}>{name}</Text>
-      <Button
-        title="Change name to manish"
-        onPress={() => {
-          setName('Manish');
-        }}
-      />
-      <Button title="Press me" onPress={() => Alert.alert('why clicked')} />
-      <Separator />
-      <Practice1 />
-      <View style={[styles.container, styles.horizontal]}>
-        <Counter />
-        {/* <ActivityIndicator /> */}
-        <ActivityIndicator size="large" bool="false" />
-        <ActivityIndicator size="small" bool="false" color="#0000ff" />
-        <ActivityIndicator size="large" color="#00ff00" />
-        <Image
-          style={{width: 100, height: 150}}
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
+      <ScrollView>
+        <Text style={styles.textColor}>{name}</Text>
+        <Button
+          title="Change name to manish"
+          onPress={() => {
+            setName('Manish');
           }}
         />
+        <Button title="Press me" onPress={() => Alert.alert('why clicked')} />
+        <Separator />
+        <Practice1 />
+        <View style={[styles.container, styles.horizontal]}>
+          <Counter />
+          {/* <ActivityIndicator /> */}
+          <ActivityIndicator size="large" bool="false" />
+          <ActivityIndicator size="small" bool="false" color="#0000ff" />
+          <ActivityIndicator size="large" color="#00ff00" />
+          <Image
+            style={{width: 100, height: 150}}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
 
-        <Image
-          accessibilityLabel="what is this"
-          tintColor="red"
-          style={styles.tinyLogo}
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        />
-        <ModalComp />
-      </View>
+          <Image
+            accessibilityLabel="what is this"
+            tintColor="red"
+            style={styles.tinyLogo}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <ModalComp />
+        </View>
+      </ScrollView>
     </>
   );
 };
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   tinyLogo: {
-    width: 50,
+    width: 55,
     height: 50,
   },
 });
