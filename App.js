@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   ActivityIndicator,
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   Alert,
   Image,
   ScrollView,
+  RefreshControl,
 } from 'react-native';
 import Counter from './Counter';
 import Practice1 from './prac/Practice1';
@@ -17,10 +18,21 @@ const Separator = () => <View style={styles.separator} />;
 
 const App = () => {
   const [name, setName] = useState('Ankit');
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
 
   return (
     <>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         <Text style={styles.textColor}>{name}</Text>
         <Button
           title="Change name to manish"
