@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   Alert,
+  KeyboardAvoidingView,
   Pressable,
   Text,
   TextInput,
@@ -17,11 +18,13 @@ const Practice1 = () => {
   return (
     <>
       <Text>WHAT is this</Text>
-      <TextInput
-        onChangeText={setGivename}
-        value={givename}
-        style={{borderWidth: 1, backgroundColor: 'blue'}}
-      />
+      <KeyboardAvoidingView>
+        <TextInput
+          onChangeText={setGivename}
+          value={givename}
+          style={{borderWidth: 1, backgroundColor: 'blue'}}
+        />
+      </KeyboardAvoidingView>
       <Text>{givename}</Text>
       <Pressable
         onPress={giveAlert}

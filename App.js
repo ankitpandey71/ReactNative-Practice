@@ -17,6 +17,7 @@ import StatusBarAdd from './prac/StatusBarAdd';
 import DrawerLayoutAdd from './prac/DrawerLayoutAdd';
 import DisplayPic from './prac/DisplayPic';
 import KeyboardAvoidView from './prac/KeyboardAvoidView';
+import VirtualList from './prac/VirtualList';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -74,6 +75,7 @@ const App = () => {
         <DrawerLayoutAdd />
         <DisplayPic />
         <KeyboardAvoidView />
+        <VirtualList />
       </ScrollView>
     </>
   );

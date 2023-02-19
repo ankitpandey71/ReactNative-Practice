@@ -13,11 +13,6 @@ const getItem = (_data, index) => ({
   title: `Item ${index + 1}`,
 });
 
-const VirtualList = (_data, index) => ({
-  id: Math.random().toString(12).substring(0),
-  title: `Item ${index + 1}`,
-});
-
 const getItemCount = _data => 50;
 
 const Item = ({title}) => (
@@ -26,7 +21,7 @@ const Item = ({title}) => (
   </View>
 );
 
-const App = () => {
+const VirtualList = () => {
   return (
     <SafeAreaView style={styles.container}>
       <VirtualizedList
