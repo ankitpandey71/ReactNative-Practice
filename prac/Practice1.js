@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {Alert, Pressable, Text, TextInput} from 'react-native';
+import {
+  Alert,
+  Pressable,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 const Practice1 = () => {
   const [givename, setGivename] = useState('');
@@ -20,6 +28,15 @@ const Practice1 = () => {
         android_ripple={{color: 'gray', radius: 30}}>
         <Text>I'm pressable!</Text>
       </Pressable>
+      <TouchableHighlight onPress={giveAlert}>
+        <Text>Touchable highlight</Text>
+      </TouchableHighlight>
+      <TouchableOpacity onPress={giveAlert}>
+        <Text>TouchableOpacity</Text>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={giveAlert}>
+        <Text>TouchableWithoutFeedback</Text>
+      </TouchableWithoutFeedback>
     </>
   );
 };
