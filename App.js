@@ -13,9 +13,10 @@ import {
 import Counter from './Counter';
 import Practice1 from './prac/Practice1';
 import ModalComp from './ModalComp';
-import StatusBar from './prac/StatusBarAdd';
 import StatusBarAdd from './prac/StatusBarAdd';
 import DrawerLayoutAdd from './prac/DrawerLayoutAdd';
+import DisplayPic from './prac/DisplayPic';
+import KeyboardAvoidView from './prac/KeyboardAvoidView';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -71,6 +72,8 @@ const App = () => {
         </View>
         <StatusBarAdd />
         <DrawerLayoutAdd />
+        <DisplayPic />
+        <KeyboardAvoidView />
       </ScrollView>
     </>
   );
