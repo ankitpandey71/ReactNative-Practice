@@ -19,6 +19,7 @@ import DisplayPic from './prac/DisplayPic';
 import KeyboardAvoidView from './prac/KeyboardAvoidView';
 import VirtualList from './prac/VirtualList';
 import NestedPress from './prac/NestedPress';
+import {NavigationContainer} from '@react-navigation/native';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -35,50 +36,52 @@ const App = () => {
 
   return (
     <>
-      <ScrollView
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }>
-        <Text style={styles.textColor}>{name}</Text>
-        <Button
-          title="Change name to manish"
-          onPress={() => {
-            setName('Manish');
-          }}
-        />
-        <Button title="Press me" onPress={() => Alert.alert('why clicked')} />
-        <Separator />
-        <Practice1 />
-        <View style={[styles.container, styles.horizontal]}>
-          <Counter />
-          {/* <ActivityIndicator /> */}
-          <ActivityIndicator size="large" bool="false" />
-          <ActivityIndicator size="small" bool="false" color="#0000ff" />
-          <ActivityIndicator size="large" color="#00ff00" />
-          <Image
-            style={{width: 100, height: 150}}
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
+      <NavigationContainer>
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }>
+          <Text style={styles.textColor}>{name}</Text>
+          <Button
+            title="Change name to manish"
+            onPress={() => {
+              setName('Manish');
             }}
           />
+          <Button title="Press me" onPress={() => Alert.alert('why clicked')} />
+          <Separator />
+          <Practice1 />
+          <View style={[styles.container, styles.horizontal]}>
+            <Counter />
+            {/* <ActivityIndicator /> */}
+            <ActivityIndicator size="large" bool="false" />
+            <ActivityIndicator size="small" bool="false" color="#0000ff" />
+            <ActivityIndicator size="large" color="#00ff00" />
+            <Image
+              style={{width: 100, height: 150}}
+              source={{
+                uri: 'https://reactnative.dev/img/tiny_logo.png',
+              }}
+            />
 
-          <Image
-            accessibilityLabel="what is this"
-            tintColor="red"
-            style={styles.tinyLogo}
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-          />
-          <ModalComp />
-        </View>
-        <NestedPress />
-        <StatusBarAdd />
-        <DrawerLayoutAdd />
-        <DisplayPic />
-        <KeyboardAvoidView />
-        <VirtualList />
-      </ScrollView>
+            <Image
+              accessibilityLabel="what is this"
+              tintColor="red"
+              style={styles.tinyLogo}
+              source={{
+                uri: 'https://reactnative.dev/img/tiny_logo.png',
+              }}
+            />
+            <ModalComp />
+          </View>
+          <NestedPress />
+          <StatusBarAdd />
+          <DrawerLayoutAdd />
+          <DisplayPic />
+          <KeyboardAvoidView />
+          <VirtualList />
+        </ScrollView>
+      </NavigationContainer>
     </>
   );
 };
