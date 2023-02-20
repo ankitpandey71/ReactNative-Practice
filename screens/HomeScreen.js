@@ -2,8 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
-function HomeScreen() {
-  const navigation = useNavigation();
+function HomeScreen({navigation}) {
+  // const navigation = useNavigation();
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
