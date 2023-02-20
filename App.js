@@ -18,6 +18,7 @@ import DrawerLayoutAdd from './prac/DrawerLayoutAdd';
 import DisplayPic from './prac/DisplayPic';
 import KeyboardAvoidView from './prac/KeyboardAvoidView';
 import VirtualList from './prac/VirtualList';
+import NestedPress from './prac/NestedPress';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -71,6 +72,7 @@ const App = () => {
           />
           <ModalComp />
         </View>
+        <NestedPress />
         <StatusBarAdd />
         <DrawerLayoutAdd />
         <DisplayPic />
