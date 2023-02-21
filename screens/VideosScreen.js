@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList, StatusBar, StyleSheet, Image} from 'react-native';
 import {useQuery, gql} from '@apollo/client';
+import tw from 'twrnc';
 // import {client} from '../App';
 
 // client
@@ -17,14 +18,7 @@ import {useQuery, gql} from '@apollo/client';
 //   })
 //   .then(result => console.log(result));
 
-const separator = () => (
-  <View
-    style={{
-      height: 8,
-      width: '100%',
-    }}
-  />
-);
+const separator = () => <View style={tw`h-2`} />;
 
 const GET_VIDEOS = gql`
   query Videos {
@@ -42,22 +36,25 @@ const GET_VIDEOS = gql`
 const Item = props => {
   console.log(props);
   return (
-    <View style={styles.container}>
+    <View style={tw`flex-row pb-2 px-2 rounded-lg`}>
       <Image
         source={{
           uri: props.item.thumbnail,
         }}
-        style={{width: 170, aspectRatio: 16 / 9, borderRadius: 10}}
+        style={tw`w-44 h-24 rounded-lg`}
       />
-      <View style={styles.wrapper}>
-        <Text style={{fontSize: 10, fontWeight: 'bold'}}>Geography</Text>
-        <Text numberOfLines={2} ellipsizeMode="tail" style={{fontSize: 15}}>
+      <View style={tw`flex justify-between px-1`}>
+        <Text style={tw`text-xs font-bold`}>Geography</Text>
+        <Text
+          numberOfLines={2}
+          ellipsizeMode="tail"
+          style={tw`text-[14px] font-bold`}>
           {props.item.title}
         </Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          <Text style={styles.timex}>{props.item.time} | </Text>
-          <Text style={styles.timex}>100 likes |</Text>
-          <Text style={styles.timex}>{props.item.createdAt}</Text>
+        <View style={tw`flex-row`}>
+          <Text style={tw`text-[10px]`}>{props.item.time} | </Text>
+          <Text style={tw`text-[10px]`}>100 likes |</Text>
+          <Text style={tw`text-[10px]`}>{props.item.createdAt}</Text>
         </View>
       </View>
     </View>
@@ -86,39 +83,5 @@ function VideosScreen() {
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    marginHorizontal: 8,
-    // borderWidth: 1,
-    // borderColor: 'red',
-    borderRadius: 10,
-    backgroundColor: 'white',
-    // marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 10,
-    marginVertical: 5,
-    marginHorizontal: 5,
-    borderWidth: 1,
-  },
-  wrapper: {flex: 1, justifyContent: 'space-between', padding: 8},
-  title: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    borderWidth: 1,
-    fontFamily: 'Times New Roman',
-  },
-  timex: {
-    // flex: 1,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    fontSize: 12,
-    // borderWidth: 1,
-    // borderColor: 'red',
-  },
-});
 
 export default VideosScreen;
