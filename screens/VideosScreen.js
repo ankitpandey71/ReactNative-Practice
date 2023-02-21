@@ -1,45 +1,34 @@
+import {View, Text, FlatList, Image} from 'react-native';
 import React from 'react';
-import {View, Text, FlatList, StatusBar, StyleSheet, Image} from 'react-native';
-import {useQuery, gql} from '@apollo/client';
 import tw from 'twrnc';
-// import {client} from '../App';
-
-// client
-//   .query({
-//     query: gql`
-//       query Videos {
-//         videos {
-//           payload {
-//             title
-//           }
-//         }
-//       }
-//     `,
-//   })
-//   .then(result => console.log(result));
+import {useQuery, gql} from '@apollo/client';
 
 const separator = () => <View style={tw`h-2`} />;
 
 const GET_VIDEOS = gql`
-  query Videos {
-    videos {
+  query Contents($filter: ContentsFilterInput) {
+    contents(filter: $filter) {
       payload {
-        _id
         title
-        thumbnail
-        time
+        type
+        updatedAt
+        price
+        offer
+        image
         createdAt
+        _id
       }
     }
   }
 `;
+console.log(GET_VIDEOS);
 const Item = props => {
   console.log(props);
   return (
     <View style={tw`flex-row pb-2 px-2 rounded-lg`}>
       <Image
         source={{
-          uri: props.item.thumbnail,
+          uri: props.item.image,
         }}
         style={tw`w-44 h-24 rounded-lg`}
       />
@@ -62,7 +51,13 @@ const Item = props => {
 };
 
 function VideosScreen() {
-  const {loading, error, data} = useQuery(GET_VIDEOS);
+  const {loading, error, data} = useQuery(GET_VIDEOS, {
+    variables: {
+      filter: {
+        type: 'Video',
+      },
+    },
+  });
 
   if (loading) return <Text>Loading</Text>;
   if (error) return <Text>Error: {error.message}</Text>;
@@ -70,16 +65,11 @@ function VideosScreen() {
     <View style={{flex: 1}}>
       <Text>VideosScreen</Text>
       <FlatList
-        data={data.videos.payload}
+        data={data?.contents?.payload}
         renderItem={({item}) => <Item item={item} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={separator}
       />
-      {/* <FlatList data={GET_VIDEOS}
-      renderItem={({title}) => <Item title={}}/>
-      {data?.videos?.payload.map(({title}) => (
-        <Text>{title}</Text>
-      ))} */}
     </View>
   );
 }

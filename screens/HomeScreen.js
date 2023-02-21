@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+// import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
@@ -18,6 +18,10 @@ function HomeScreen({navigation}) {
       <Button
         title="Go To Documents"
         onPress={() => navigation.navigate('Documents')}
+      />
+      <Button
+        title="Go To TabNavigator"
+        onPress={() => navigation.navigate('TabNavigator')}
       />
     </View>
   );

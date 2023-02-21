@@ -10,20 +10,12 @@ const GET_TEST = gql`
     contents(filter: $filter) {
       payload {
         title
-
         type
         updatedAt
-
         price
-        offerType
         offer
-        likes
-
         image
-
-        description
         createdAt
-
         _id
       }
     }
@@ -90,7 +82,7 @@ function DocumentsScreen() {
       <FlatList
         data={data?.contents?.payload}
         renderItem={({item}) => <Item item={item} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
         ItemSeparatorComponent={Separator}
         horizontal={false}
         numColumns={2}
