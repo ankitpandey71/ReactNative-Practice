@@ -65,7 +65,7 @@ const Item = props => {
         <View>
           <Text style={tw`text-[10px]`}>100 likes | 180 attempts</Text>
         </View>
-        <View style={tw`flex-row space-x-4 px-1 pb-1 flex justify-between `}>
+        <View style={tw`flex-row px-1 pb-1 flex justify-between `}>
           <Text
             style={tw`text-[10px] shadow bg-orange-200 text-red-700 rounded-sm`}>
             ${props.item.price}

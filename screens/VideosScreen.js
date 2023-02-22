@@ -67,7 +67,7 @@ function VideosScreen() {
       <FlatList
         data={data?.contents?.payload}
         renderItem={({item}) => <Item item={item} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
         ItemSeparatorComponent={separator}
       />
     </View>

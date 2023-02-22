@@ -28,7 +28,7 @@ const Item = props => {
   console.log(props);
   return (
     <View
-      style={tw.style(`flex flex-col rounded-lg bg-white`, {
+      style={tw.style('flex flex-col rounded-lg bg-white', {
         width: width / 2 - 8,
       })}>
       <Image

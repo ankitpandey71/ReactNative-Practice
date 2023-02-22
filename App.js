@@ -21,9 +21,18 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerMode: 'screen',
+              headerTintColor: 'green',
+              headerStyle: {backgroundColor: 'orange'},
+            }}>
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="TabNavigator" component={TabNavigator} />
+            <Stack.Screen
+              options={{headerShown: false}}
+              name="TabNavigator"
+              component={TabNavigator}
+            />
             <Stack.Screen name="Videos" component={VideosScreen} />
             <Stack.Screen name="Tests" component={TestsScreen} />
             <Stack.Screen name="Documents" component={DocumentsScreen} />
