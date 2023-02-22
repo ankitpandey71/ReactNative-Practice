@@ -8,6 +8,7 @@ import TestsScreen from './screens/TestsScreen';
 import VideosScreen from './screens/VideosScreen';
 import {ApolloClient, InMemoryCache, ApolloProvider, gql} from '@apollo/client';
 import TabNavigator from './navigator/TabNavigator';
+import Practice1 from './prac/Practice1';
 
 export const client = new ApolloClient({
   uri: 'https://course-cube-server.onrender.com',
@@ -36,6 +37,7 @@ function App() {
             <Stack.Screen name="Videos" component={VideosScreen} />
             <Stack.Screen name="Tests" component={TestsScreen} />
             <Stack.Screen name="Documents" component={DocumentsScreen} />
+            <Stack.Screen name="Practice1" component={Practice1} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApolloProvider>
