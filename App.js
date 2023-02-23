@@ -9,6 +9,13 @@ import VideosScreen from './screens/VideosScreen';
 import {ApolloClient, InMemoryCache, ApolloProvider, gql} from '@apollo/client';
 import TabNavigator from './navigator/TabNavigator';
 import Practice1 from './prac/Practice1';
+import Practice2 from './prac/Practice2';
+import ActivityIndicatorScreen from './screens/ActivityIndicatorScreen';
+import ButtonScreen from './screens/ButtonScreen';
+import FlatListScreen from './screens/FlatListScreen';
+import KeyboardAvoidingViewScreen from './screens/KeyboardAvoidingViewScreen';
+import ModalScreen from './screens/ModalScreen';
+import VirtualList from './screens/VirtualList';
 
 export const client = new ApolloClient({
   uri: 'https://course-cube-server.onrender.com',
@@ -38,6 +45,20 @@ function App() {
             <Stack.Screen name="Tests" component={TestsScreen} />
             <Stack.Screen name="Documents" component={DocumentsScreen} />
             <Stack.Screen name="Practice1" component={Practice1} />
+            <Stack.Screen name="Practice2" component={Practice2} />
+            <Stack.Screen
+              name="Activity Indicator"
+              component={ActivityIndicatorScreen}
+            />
+
+            <Stack.Screen name="Button Screen" component={ButtonScreen} />
+            <Stack.Screen name="FlatList Screen" component={FlatListScreen} />
+            <Stack.Screen
+              name="KeyboardAvoidingView Screen"
+              component={KeyboardAvoidingViewScreen}
+            />
+            <Stack.Screen name="Modal Screen" component={ModalScreen} />
+            <Stack.Screen name="VirtualList Screen" component={VirtualList} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApolloProvider>
