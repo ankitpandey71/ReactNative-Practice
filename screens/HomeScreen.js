@@ -27,6 +27,34 @@ function HomeScreen({navigation}) {
         title="Go To Practice"
         onPress={() => navigation.navigate('Practice1')}
       />
+      <Button
+        title="Go To Practice2"
+        onPress={() => navigation.navigate('Practice2')}
+      />
+      <Button
+        title="Go To Activity Indicator"
+        onPress={() => navigation.navigate('Activity Indicator')}
+      />
+      <Button
+        title="Go To Button Screen"
+        onPress={() => navigation.navigate('Button Screen')}
+      />
+      <Button
+        title="Go To FlatList Screen"
+        onPress={() => navigation.navigate('FlatList Screen')}
+      />
+      <Button
+        title="Go To KeyboardAvoidingView Screen"
+        onPress={() => navigation.navigate('KeyboardAvoidingView Screen')}
+      />
+      <Button
+        title="Go To Modal Screen"
+        onPress={() => navigation.navigate('Modal Screen')}
+      />
+      <Button
+        title="Go To VirtualizedList Screen"
+        onPress={() => navigation.navigate('VirtualList Screen')}
+      />
     </View>
   );
 }
