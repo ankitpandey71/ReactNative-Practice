@@ -16,6 +16,9 @@ import FlatListScreen from './screens/FlatListScreen';
 import KeyboardAvoidingViewScreen from './screens/KeyboardAvoidingViewScreen';
 import ModalScreen from './screens/ModalScreen';
 import VirtualList from './screens/VirtualList';
+import PanResponderScreen from './screens/PanResponderScreen';
+import VibrationScreen from './screens/VibrationScreen';
+import ShareScreen from './screens/ShareScreen';
 
 export const client = new ApolloClient({
   uri: 'https://course-cube-server.onrender.com',
@@ -59,6 +62,12 @@ function App() {
             />
             <Stack.Screen name="Modal Screen" component={ModalScreen} />
             <Stack.Screen name="VirtualList Screen" component={VirtualList} />
+            <Stack.Screen
+              name="PanResponder Screen"
+              component={PanResponderScreen}
+            />
+            <Stack.Screen name="Vibration Screen" component={VibrationScreen} />
+            <Stack.Screen name="Share Screen" component={ShareScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApolloProvider>
