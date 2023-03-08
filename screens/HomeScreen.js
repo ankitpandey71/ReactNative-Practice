@@ -55,6 +55,18 @@ function HomeScreen({navigation}) {
         title="Go To VirtualizedList Screen"
         onPress={() => navigation.navigate('VirtualList Screen')}
       />
+      <Button
+        title="Go To PanResponder Screen"
+        onPress={() => navigation.navigate('PanResponder Screen')}
+      />
+      <Button
+        title="Go To Vibration Screen"
+        onPress={() => navigation.navigate('Vibration Screen')}
+      />
+      <Button
+        title="Go To Share Screen"
+        onPress={() => navigation.navigate('Share Screen')}
+      />
     </View>
   );
 }
